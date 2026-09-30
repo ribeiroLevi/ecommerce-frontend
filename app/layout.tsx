@@ -1,6 +1,21 @@
 import type { Metadata } from "next";
+import { Alexandria, Inter } from "next/font/google";
 import { Geist, Geist_Mono } from "next/font/google";
+import { CartProvider } from "../app/context/CardContext";
 import "./globals.css";
+import { AuthProvider } from "./context/AuthContext";
+
+const alexandria = Alexandria({
+  subsets: ["latin"],
+  variable: "--font-alexandria",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,9 +36,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${alexandria.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <AuthProvider>
+          <CartProvider>{children}</CartProvider>
+        </AuthProvider>
+      </body>
     </html>
   );
 }
