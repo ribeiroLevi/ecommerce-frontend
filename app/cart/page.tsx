@@ -24,7 +24,6 @@ export default function CartPage() {
         <h1 className="text-3xl font-bold text-amber-950 mb-8">Carrinho</h1>
 
         <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-6 items-start">
-          {/* PRODUTOS */}
           <section className="flex flex-col gap-3">
             {cart.length === 0 ? (
               <div className="border border-stone-300 rounded-xl p-8 text-center text-stone-500">
@@ -43,7 +42,6 @@ export default function CartPage() {
                     key={item.product.id}
                     className="border border-stone-400 rounded-xl p-3 flex items-center gap-4"
                   >
-                    {/* IMAGEM */}
                     <div className="relative w-24 h-24 shrink-0 rounded-md overflow-hidden bg-amber-400">
                       {item.product.picture ? (
                         <Image
@@ -60,7 +58,6 @@ export default function CartPage() {
                       )}
                     </div>
 
-                    {/* PRODUTO */}
                     <div className="flex-1 min-w-0">
                       <h2 className="text-sm font-semibold text-stone-900 truncate">
                         {item.product.name}
@@ -71,7 +68,6 @@ export default function CartPage() {
                       </p>
                     </div>
 
-                    {/* QUANTIDADE */}
                     <div>
                       <div className="flex items-center gap-3">
                         <button
@@ -106,7 +102,6 @@ export default function CartPage() {
                       )}
                     </div>
 
-                    {/* SUBTOTAL */}
                     <div className="w-24 text-right">
                       <p className="text-sm font-bold text-stone-900">
                         R$ {subtotal.toFixed(2).replace(".", ",")}
@@ -115,7 +110,6 @@ export default function CartPage() {
                       <p className="text-xs text-stone-500">subtotal</p>
                     </div>
 
-                    {/* EXCLUIR */}
                     <button
                       type="button"
                       onClick={() => removeFromCart(item.product.id)}
@@ -130,7 +124,6 @@ export default function CartPage() {
             )}
           </section>
 
-          {/* RESUMO */}
           <aside className="border border-stone-400 rounded-xl p-5">
             <h2 className="text-lg font-bold text-stone-800 mb-5">
               Resumo do pedido

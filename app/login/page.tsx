@@ -31,8 +31,6 @@ export default function LoginPage() {
         password,
       });
 
-      // Login terminou e o cookie foi criado.
-      // Agora consulta /auth/me novamente.
       await refreshSession();
 
       if (user.adm) {
@@ -58,7 +56,6 @@ export default function LoginPage() {
 
       <main className="min-h-[calc(100vh-5rem)] flex items-center justify-center bg-[#FFF8EF] px-4">
         <section className="w-full max-w-[340px]">
-          {/* TÍTULO */}
           <div className="mb-5 text-center">
             <h1 className="text-2xl font-bold text-[#32180D]">Entrar</h1>
 
@@ -104,7 +101,6 @@ export default function LoginPage() {
               />
             </div>
 
-            {/* SENHA */}
             <div>
               <label
                 htmlFor="password"
@@ -141,7 +137,6 @@ export default function LoginPage() {
               />
             </div>
 
-            {/* ERRO */}
             {error && <p className="text-sm text-red-600">{error}</p>}
 
             {/* BOTÕES */}

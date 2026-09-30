@@ -18,19 +18,16 @@ export default function Nav({ empty = false }: NavProps) {
   const { cartCount } = useCart();
   const { user, loading, logout } = useAuth();
 
-  // Páginas ativas
   const isStore = pathname === "/";
   const isCart = pathname === "/cart";
   const isPurchases = pathname === "/purchases";
   const isProfile = pathname === "/profile";
   const isAdminHome = pathname === "/";
 
-  // Define o tipo de usuário através da sessão
   const variant = !user ? "guest" : user.adm ? "admin" : "user";
 
   return (
     <nav className="bg-orange-50 h-20 border-b-3 border-stone-300 flex justify-between items-center px-8">
-      {/* LOGO */}
       <button
         type="button"
         onClick={() => router.push("/")}
@@ -43,10 +40,8 @@ export default function Nav({ empty = false }: NavProps) {
         </p>
       </button>
 
-      {/* Login/Register: mostra apenas o logo */}
       {!empty && !loading && (
         <>
-          {/* DESLOGADO */}
           {variant === "guest" && (
             <div className="flex gap-5 items-center">
               <Button
@@ -72,7 +67,6 @@ export default function Nav({ empty = false }: NavProps) {
             </div>
           )}
 
-          {/* USUÁRIO LOGADO */}
           {variant === "user" && (
             <div className="flex gap-5 items-center">
               <Button
@@ -109,7 +103,6 @@ export default function Nav({ empty = false }: NavProps) {
             </div>
           )}
 
-          {/* ADMIN */}
           {variant === "admin" && (
             <div className="flex gap-5 items-center">
               <Button

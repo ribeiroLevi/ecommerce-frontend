@@ -4,7 +4,7 @@ import Nav from "../components/nav";
 export default function RegisterPage() {
   return (
     <div>
-      <Nav variant="empty" />
+      <Nav empty />
       <main className="flex-1 flex items-center justify-center px-4 py-8">
         <section className="w-full max-w-[390px]">
           <div className="text-center mb-5">
@@ -15,9 +15,7 @@ export default function RegisterPage() {
             </p>
           </div>
 
-          {/* Formulário */}
           <form className="border border-stone-400 rounded-xl p-5 space-y-4">
-            {/* Nome */}
             <div>
               <label
                 htmlFor="name"
@@ -35,7 +33,6 @@ export default function RegisterPage() {
               />
             </div>
 
-            {/* Endereço */}
             <div>
               <label
                 htmlFor="address"
@@ -53,7 +50,6 @@ export default function RegisterPage() {
               />
             </div>
 
-            {/* Email */}
             <div>
               <label
                 htmlFor="email"
@@ -71,7 +67,6 @@ export default function RegisterPage() {
               />
             </div>
 
-            {/* Login */}
             <div>
               <label
                 htmlFor="login"
@@ -89,7 +84,6 @@ export default function RegisterPage() {
               />
             </div>
 
-            {/* Senha */}
             <div>
               <label
                 htmlFor="password"
@@ -107,7 +101,6 @@ export default function RegisterPage() {
               />
             </div>
 
-            {/* Botões */}
             <div className="space-y-3 pt-4">
               <button
                 type="submit"
@@ -124,7 +117,6 @@ export default function RegisterPage() {
               </Link>
             </div>
 
-            {/* Voltar */}
             <div className="pt-2 text-center">
               <Link
                 href="/"

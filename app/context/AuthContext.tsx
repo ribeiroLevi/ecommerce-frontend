@@ -23,12 +23,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<AuthUser | null>(null);
   const [loading, setLoading] = useState(true);
 
-  /*
-   * Atualiza manualmente a sessão.
-   *
-   * Usado principalmente depois do login para buscar
-   * novamente os dados do usuário através do /auth/me.
-   */
   async function refreshSession() {
     setLoading(true);
 
@@ -45,10 +39,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   }
 
-  /*
-   * Encerra a sessão no backend e remove o usuário
-   * do estado global da aplicação.
-   */
   async function logout() {
     try {
       await logoutRequest();
@@ -61,10 +51,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   }
 
-  /*
-   * Verifica se já existe uma sessão quando
-   * a aplicação é carregada.
-   */
   useEffect(() => {
     let active = true;
 

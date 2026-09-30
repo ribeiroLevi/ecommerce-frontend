@@ -10,11 +10,11 @@ export interface Product {
   id: string;
   name: string;
   description: string;
-  price: number; // Mapeado de Decimal do Prisma
+  price: number;
   picture: string | null;
-  quantity: number; // Estoque
+  quantity: number;
   category_id: string;
-  categories?: Category; // Populado via include do Prisma
+  categories?: Category;
 }
 
 export interface SaleProduct {

@@ -2,7 +2,6 @@ import Image from "next/image";
 import { ShoppingCart } from "lucide-react";
 import Button from "../components/button";
 import { getImageUrl, Product } from "../services/api";
-import placeholder from "../../public/images/placeholder.jpg";
 
 interface ProductCardProps {
   product: Product;
